@@ -55,11 +55,19 @@ export default {
 
 <style lang="css" scoped>
 
-/* #bookingsGrid {
+#bookingsGrid {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   padding: 50px;
-} */
+}
+
+.bookings {
+  border: 1px black solid;
+  width: 200px;
+  padding: 20px;
+  margin-bottom: 40px;
+  background-color: green;
+}
 
 </style>

@@ -1,5 +1,5 @@
 <template lang="html">
-  <form @submit="handleSubmit" id="bookings-form">
+  <form class="form" @submit="handleSubmit" id="bookings-form">
     <div class="wrapper">
       <label for="name">Name</label>
       <input v-model="name" id="name" type="text" required>
@@ -47,4 +47,8 @@ export default {
 </script>
 
 <style lang="css" scoped>
+
+.form {
+  postion: sticky;
+}
 </style>
