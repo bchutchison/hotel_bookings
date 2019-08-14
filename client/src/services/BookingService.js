@@ -13,8 +13,19 @@ export default {
     .then(res => res.json());
   },
   deleteBooking(id){
+    return fetch(`${baseURL}${id}`, { method: 'DELETE' })
+  },
+  updateBooking(booking) {
+    const id = booking._id;
+    const payload = {
+      name: booking.name,
+      email: booking.email,
+      checkedIn: booking.checkedIn
+    };
     return fetch(`${baseURL}${id}`, {
-      method: 'DELETE'
-    })
+      method: 'PUT',
+      body: JSON.stringify(payload),
+      headers: { 'Content-Type': 'application/json' }
+    });
   }
 }

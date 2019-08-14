@@ -3,9 +3,19 @@
      <div class="bookings" v-for="(booking, index) in bookings">
        <h2>Name: {{ booking.name }}</h2>
        <p>Email: {{ booking.email }}</p>
-       <p v-if="booking.checkedIn">Checked In</p>
-       <p v-else>Not Checked In</p>
-       <button class="delete-btn" @click="handleDelete(booking._id, index)"> Delete</button>
+
+
+       <div v-if="booking.checkedIn">
+         <p>Checked In</p>
+         <button class="update-btn" @click="handleCheck(booking, false)">Check Out</button>
+       </div>
+
+       <div v-else>
+         <p>Not Checked In</p>
+         <button class="update-btn" @click="handleCheck(booking, true)">Check In</button>
+       </div>
+
+       <button class="delete-btn" @click="handleDelete(booking._id, index)">Delete</button>
      </div>
   </div>
 </template>
@@ -21,19 +31,23 @@ export default {
       bookings: []
     }
   },
-  mounted(){
+  mounted() {
     this.fetchData();
     eventBus.$on('booking-added', booking => this.bookings.push(booking));
   },
   methods: {
-    fetchData(){
+    fetchData() {
       BookingService.getBookings()
       .then(bookings => this.bookings = bookings);
     },
-
-    handleDelete(id, index){
+    handleDelete(id, index) {
       BookingService.deleteBooking(id);
       this.bookings.splice(index, 1);
+    },
+    handleCheck(booking, status) {
+      booking.checkedIn = status;
+
+      BookingService.updateBooking(booking);
     }
   }
 }

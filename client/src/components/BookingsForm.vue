@@ -2,11 +2,11 @@
   <form @submit="handleSubmit" id="bookings-form">
     <div class="wrapper">
       <label for="name">Name</label>
-      <input v-model="name" id="name" type="text">
+      <input v-model="name" id="name" type="text" required>
     </div>
     <div class="wrapper">
       <label for="email">Email</label>
-      <input v-model="email" id="email" type="text">
+      <input v-model="email" id="email" type="text" required>
     </div>
     <div class="wrapper">
       <label for="checked-in">Checked In</label>
