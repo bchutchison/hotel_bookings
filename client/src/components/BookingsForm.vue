@@ -18,6 +18,7 @@
 
 <script>
 import BookingService from '../services/BookingService.js';
+import { eventBus } from '@/main.js';
 
 export default {
   name: 'bookings-form',
@@ -36,7 +37,10 @@ export default {
         email: this.email,
         checkedIn: this.checkedIn
       };
-      BookingService.postBooking(payload);
+      BookingService.postBooking(payload)
+      .then(booking => {
+        eventBus.$emit('booking-added', booking);
+      });
     }
   }
 }

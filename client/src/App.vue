@@ -1,35 +1,19 @@
 <template lang="html">
   <div id="app">
     <bookings-form />
-    <!-- <bookings-grid :bookings="bookings" /> -->
+    <bookings-grid />
   </div>
 </template>
 
 <script>
 import BookingsForm from './components/BookingsForm';
-import BookingService from './services/BookingService.js';
+import BookingsGrid from './components/BookingsGrid';
 
 export default {
   name: 'app',
   components: {
-    'bookings-form': BookingsForm
-  },
-  data ()  {
-    return {
-      bookings: []
-    }
-  },
-
-  mounted(){
-    this.fetchData();
-
-  },
-
-  methods: {
-    fetchData(){
-      BookingService.getBookings()
-      .then(bookings => this.bookings = bookings);
-    }
+    'bookings-form': BookingsForm,
+    'bookings-grid': BookingsGrid
   }
 }
 </script>
