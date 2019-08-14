@@ -25,7 +25,20 @@ const createRouter = (collection) => {
       .catch(err => handleServerError(err, res));
   });
 
+  //Create
+  router.post('/', (req, res) => {
+    collection.insertOne(req.body)
+      .then((result) => res.json(result.ops[0]))
+      .catch(err => handleServerError(err, res));
+  });
 
+  //Delete
+  router.delete('/:id', (req, res) => {
+    const id = req.params.id;
+    collection.deleteOne({ _id: ObjectID(id) })
+      .then(result => res.json(result))
+      .catch(err => handleServerError(err, res));
+  });
 
   return router;
 };
