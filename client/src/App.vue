@@ -1,6 +1,8 @@
 <template lang="html">
   <div id="app">
-    <h1>Hotel Bookings</h1>
+    <div class="title">
+      <h1>Hotel Bookings</h1>
+    </div>
     <bookings-form />
     <bookings-grid />
   </div>
@@ -23,6 +25,14 @@ export default {
 
 #app {
     font-family: helvetica;
+}
+
+.title {
+  position: sticky;
+  top: 0px;
+  background-color: white;
+  padding-bottom: 5px;
+  z-index: 10;
 }
 
 </style>

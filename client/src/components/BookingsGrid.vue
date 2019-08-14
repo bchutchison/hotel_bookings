@@ -76,20 +76,26 @@ export default {
 button {
   padding: 5px;
   text-align: centre;
-  display: inline-block;
   margin: 5px;
   border-radius: 2px 2px;
+  display: inline-block;
+  float: left;
 }
 
 .delete-btn {
   background-color: none;
   border: 2px red solid;
+  width: 90px;
+  height: 30px;
 }
 
 .update-btn {
   background-color: none;
   border: 2px green solid;
+  width: 90px;
+  height: 30px;
 }
+
 
 .checked-in {
   background-color: green;

@@ -50,14 +50,36 @@ export default {
 
 form {
     font-family: helvetica;
+    line-height: 15px;
+    position: sticky;
+    top: 0px;
+    background-color: white;
 }
 
-button {
-  padding: 5px;
-  text-align: centre;
-  display: inline-block;
-  margin: 5px;
-  border-radius: 2px 2px;
+input[type=text] {
+  width: 30%;
+  padding: 10px 20px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+label {
+  display: block;
+}
+
+input[type=submit] {
+  width: 20%;
+  background-color: green;
+  color: white;
+  padding: 10px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
 }
 
 </style>
