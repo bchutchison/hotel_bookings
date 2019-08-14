@@ -1,5 +1,6 @@
 <template lang="html">
   <div id="app">
+    <h1>Hotel Bookings</h1>
     <bookings-form />
     <bookings-grid />
   </div>
@@ -19,4 +20,9 @@ export default {
 </script>
 
 <style lang="css" scoped>
+
+#app {
+    font-family: helvetica;
+}
+
 </style>

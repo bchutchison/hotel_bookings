@@ -48,7 +48,16 @@ export default {
 
 <style lang="css" scoped>
 
-.form {
-  postion: sticky;
+form {
+    font-family: helvetica;
 }
+
+button {
+  padding: 5px;
+  text-align: centre;
+  display: inline-block;
+  margin: 5px;
+  border-radius: 2px 2px;
+}
+
 </style>

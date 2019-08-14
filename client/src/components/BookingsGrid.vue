@@ -6,12 +6,12 @@
 
 
        <div v-if="booking.checkedIn">
-         <p>Checked In</p>
+         <p class="checked-in">Checked In</p>
          <button class="update-btn" @click="handleCheck(booking, false)">Check Out</button>
        </div>
 
        <div v-else>
-         <p>Not Checked In</p>
+         <p class="checked-out">Not Checked In</p>
          <button class="update-btn" @click="handleCheck(booking, true)">Check In</button>
        </div>
 
@@ -60,14 +60,47 @@ export default {
   flex-wrap: wrap;
   justify-content: space-between;
   padding: 50px;
+  font-family: helvetica;
 }
 
 .bookings {
-  border: 1px black solid;
-  width: 200px;
+  border: 1px grey solid;
+  box-shadow: 5px 5px grey;
+  width: 300px;
   padding: 20px;
   margin-bottom: 40px;
+  background-color: lightblue;
+  border-radius: 8px 8px;
+}
+
+button {
+  padding: 5px;
+  text-align: centre;
+  display: inline-block;
+  margin: 5px;
+  border-radius: 2px 2px;
+}
+
+.delete-btn {
+  background-color: none;
+  border: 2px red solid;
+}
+
+.update-btn {
+  background-color: none;
+  border: 2px green solid;
+}
+
+.checked-in {
   background-color: green;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.checked-out {
+  background-color: orange;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 </style>
